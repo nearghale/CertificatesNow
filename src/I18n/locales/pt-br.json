@@ -1,0 +1,22 @@
+{
+  "login-screen": {
+    "enter-with-yourself": "Entre com as suas",
+    "credentials-access" : "credenciais de acesso",
+    "welcome": "Bem-vindo! Por favor, insira seus dados para realizar o login no sistema",
+    "user": "Usuário",
+    "inform-your-user": "Informe seu usuário",
+    "password": "Senha",
+    "enter": "Entrar"
+  },
+  "home-screen": {
+    "producers": "Produtores",
+    "search-code": "Buscar por código, fornecedor, nome, cpf ou cnpj"
+  },
+  "list-code-name-component": {
+    "code": "Código",
+    "name": "Nome"
+  },
+  "header-component": {
+    "storage": "Armazém"
+  }
+}
