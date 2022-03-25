@@ -19,7 +19,7 @@ Foram criadas as seguintes features:
     - Tela de pesquisa de certificados,
 
 
-*** Caso você saia de sua conta do app, basta clicar no seu nome ou foto na parte superior direita
+*** Caso você queira sair de sua conta do app, basta clicar no seu nome ou foto na parte superior direita
 
 ---
 
