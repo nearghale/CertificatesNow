@@ -9,6 +9,7 @@ Foram criadas as seguintes features:
 - Hook de autenticação e modal
 - Reanimated 2
 - Styled Componentes
+- Eslint e Prettier
 - Atomic Design
 - Variáveis de ambiente (apenas staging no momento)
 - Redux Sagas com Ducks
