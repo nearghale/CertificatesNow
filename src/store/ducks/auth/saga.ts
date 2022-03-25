@@ -14,13 +14,11 @@ function* authenticate({ payload: { credentials } }: any) {
     const data: LoginResponseProps = yield call(AuthService.authenticate, {
       ...credentials,
     });
-    console.log('data user log ', data);
     if (data.token) {
       yield put(authenticateSuccess(data.token));
     }
     yield put(saveAccountData(data));
   } catch (error: any) {
-    console.log('error ', error.response.data);
     yield put(authenticateError(error.response.data));
   }
 }

@@ -1,6 +1,6 @@
 import React, { useRef, useCallback } from 'react';
 
-// import { Container } from './styles';
+import { View } from 'react-native';
 import { Text, Container, Input, Button } from '~/components';
 import { translate } from '~/I18n';
 import { Color } from '~/styles';
@@ -9,6 +9,7 @@ import { CredentialsProps } from '~/interfaces/user';
 import { ApplicationState } from '~/store';
 import { useSelector, useDispatch } from 'react-redux';
 import { AuthActions } from '~/store/ducks/auth';
+import normalize from '~/utils/dynamicRatio';
 import validationSchemaLogin from './yupValidation';
 
 const login: React.FC = () => {
@@ -18,9 +19,8 @@ const login: React.FC = () => {
   const handleLogin = (credentials: CredentialsProps) => {
     dispatch(
       AuthActions.authenticate({
-        usuario: 'autenticacao.teste',
-        senha:
-          'jWEsOlAUMRW9hWcS9fgYgtSTPfwDEvk3aLSZRX3RwQIbA/7VXb8SnojNsulIHMJi',
+        usuario: credentials.usuario,
+        senha: credentials.senha,
       }),
     );
   };
@@ -32,7 +32,6 @@ const login: React.FC = () => {
     if (!loading) {
       formRef.current?.handleSubmit();
     }
-    console.log('loading ', loading);
 
     return null;
   }, [loading]);
@@ -60,7 +59,7 @@ const login: React.FC = () => {
           usuario: '',
           senha: '',
         }}
-        onSubmit={(values: CredentialsProps) => handleLogin(values)}
+        onSubmit={(values: CredentialsProps) => handleLogin(values, false)}
       >
         {({ values, errors, setFieldValue, touched }) => (
           <>
@@ -78,7 +77,7 @@ const login: React.FC = () => {
               height={50}
               borderRadius={1}
               fontFamily={'SFProDisplay-Regular'}
-              paddingLeft={18}
+              pl={18}
               value={values.usuario}
               errors={errors.usuario}
               touched={touched.usuario}
@@ -99,7 +98,7 @@ const login: React.FC = () => {
               height={50}
               borderRadius={1}
               fontFamily={'SFProDisplay-Regular'}
-              paddingLeft={18}
+              pl={18}
               value={values.senha}
               errors={errors.senha}
               touched={touched.senha}
@@ -126,6 +125,32 @@ const login: React.FC = () => {
               w={320}
               onPress={() => handleSubmit()}
             />
+            <View
+              style={{
+                position: 'absolute',
+                bottom: normalize(14),
+                right: normalize(40),
+              }}
+            >
+              <Button
+                text={translate('login-screen.fill-form')}
+                backgroundColor={Color.primaryBlue}
+                loading={false}
+                fontSize={12}
+                fontFamily="SFProDisplay-Medium"
+                mt={4}
+                h={25}
+                borderRadius={4}
+                w={80}
+                onPress={() => {
+                  setFieldValue('usuario', 'autenticacao.teste');
+                  setFieldValue(
+                    'senha',
+                    'jWEsOlAUMRW9hWcS9fgYgtSTPfwDEvk3aLSZRX3RwQIbA/7VXb8SnojNsulIHMJi',
+                  );
+                }}
+              />
+            </View>
           </>
         )}
       </Formik>

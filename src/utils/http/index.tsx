@@ -56,17 +56,12 @@ httpService.interceptors.response.use(
 
 httpService.interceptors.request.use(
   (config) => {
-    console.log('chegou aqui no getToken');
-
     getToken()
       .then((token) => {
-        console.log('token ', token);
-
         if (token !== '') config.headers.Authorization = `Bearer ${token}`;
         return Promise.resolve(config);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
         return Promise.resolve(config);
       });
 

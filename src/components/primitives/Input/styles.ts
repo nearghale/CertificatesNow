@@ -34,7 +34,7 @@ export const Input = styled.TextInput<InputProps>`
   margin-left: ${normalize(8)}px;
   font-family: ${(props) =>
     props.fontFamily ? props.fontFamily : 'SFProDisplay-Regular'};
-  width: 100%;
+  width: 90%;
   text-decoration: none;
   text-transform: none;
   font-size: ${(props) => (props.fontSize ? props.fontSize : 18)}px;

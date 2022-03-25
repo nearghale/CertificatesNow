@@ -17,8 +17,6 @@ export async function authenticate(
       senha: credentials.senha.trim(),
     });
 
-    console.log('dados de login', data);
-
     await AsyncStorage.setItem(
       '@CERTIFICATES_NOW/userData',
       JSON.stringify(data),
