@@ -27,7 +27,7 @@ Foram criadas as seguintes features:
 Primeiro rode a aplicação seguindo o passo a passo abaixo: 
 
 ### Para rodar o app
-Acesse a pasta: UnivSearch e execute no terminal, os seguintes passos: 
+Acesse a pasta do projeto e execute no terminal, os seguintes passos: 
 
 ```jsx
 yarn install
