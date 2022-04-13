@@ -41,5 +41,4 @@ yarn a
 - Esta aplicação foi construída com uma ótima arquitetura 🤗
 - Adicionei um botão para preencher o formulário de login e senha, para agilizar nos testes 😉
 - Ainda preciso adicionar algumas fontes (como o extraBold)
-- Amei realizar este desafio!!! 👨‍💻💙
 
